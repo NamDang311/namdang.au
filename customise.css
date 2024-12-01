@@ -1,3 +1,18 @@
-.name-heading{
-    display: none;
+.pt-category {
+    position: relative;
+}
+
+.pt-category::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FF4E0F;
+    transition: width 0.3s ease-in-out;
+}
+
+.pt-category:hover::after {
+    width: 100%;
 }
