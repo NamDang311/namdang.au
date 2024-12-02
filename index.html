@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GSAP Character Animation</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script
+            src="SplitText.min.js"></script>
+
+        <style>
+    .page-heading-hero {
+      font-size: 3rem;
+      text-align: center;
+      overflow: hidden; /* Ensure characters outside the view don't show */
+    }
+  </style>
+
+    </head>
+    <body>
+        <div class="page-heading-hero">
+            Animate Me!
+        </div>
+
+        <script>
+    // Ensure GSAP is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+    // Split the text inside the span into individual characters
+    const splitText = new SplitText(".page-heading-hero", { type: "chars" });
+  
+    // Animate each character
+    gsap.from(splitText.chars, {
+      y: 100, // Start from 100px below
+      opacity: 0, // Start with opacity 0
+      duration: 1, // Animation duration
+      stagger: 0.05, // Delay between each character animation
+      ease: "power3.out", // Easing for the animation
+    });
+    });
+  </script>
+    </body>
+</html>
